@@ -1,5 +1,21 @@
 [
   {
+    "name": "cat",
+    "aliases": [],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "action",
+    "description": "enviar uma foto aleatoria de um gato.",
+    "parameters": [
+      "User Mention"
+    ],
+    "examples": [
+      "baka @user"
+    ]
+  },
+  {
     "name": "baka",
     "aliases": [],
     "clientPermissions": [
