@@ -1,18 +1,93 @@
 [
   {
     "name": "cat",
-    "aliases": [],
+    "aliases": ["gato"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "animais",
     "description": "enviar uma foto aleatoria de um gato.",
-    "parameters": [
-      "User Mention"
-    ],
     "examples": [
-      "baka @user"
+      "cat"
+    ]
+  },
+  {
+    "name": "dog",
+    "aliases": ["cachorro"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de um cachorro.",
+    "examples": [
+      "dog"
+    ]
+  },
+  {
+    "name": "fox",
+    "aliases": ["raposa"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de uma raposa.",
+    "examples": [
+      "fox"
+    ]
+  },
+  {
+    "name": "goose",
+    "aliases": ["ganso"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de um ganso.",
+    "examples": [
+      "goose"
+    ]
+  },
+  {
+    "name": "Koala",
+    "aliases": ["coala"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de um coala.",
+    "examples": [
+      "koala"
+    ]
+  },
+  {
+    "name": "Lizard",
+    "aliases": ["lagarto"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de um lagarto.",
+    "examples": [
+      "Lizard"
+    ]
+  },
+  {
+    "name": "Panda",
+    "aliases": [""],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "animais",
+    "description": "enviar uma foto aleatoria de um panda.",
+    "examples": [
+      "panda"
     ]
   },
   {
