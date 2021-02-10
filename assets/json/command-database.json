@@ -6,7 +6,7 @@
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
-    "group": "action",
+    "group": "animais",
     "description": "enviar uma foto aleatoria de um gato.",
     "parameters": [
       "User Mention"
