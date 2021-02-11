@@ -230,7 +230,10 @@
   },
   {
     "name": "holdhands",
-    "aliases": ["segurarmão", "hdh"],
+    "aliases": [
+      "segurarmão", 
+      "hdh"
+    ],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
