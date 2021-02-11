@@ -1,14 +1,5 @@
 [
   {
-    "name": "ascii",
-    "aliases": [""],
-    "group": "fun",
-    "description": "criar texti em ascii",
-    "examples": [
-      "ascii <testo>"
-    ]
-  },
-  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
@@ -740,6 +731,15 @@
       "advice",
       "tips",
       "advise"
+    ]
+  },
+  {
+    "name": "ascii",
+    "aliases": [""],
+    "group": "fun",
+    "description": "criar texti em ascii",
+    "examples": [
+      "ascii <texto>"
     ]
   },
   {
