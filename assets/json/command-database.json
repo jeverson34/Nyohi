@@ -2,7 +2,7 @@
   {
     "name": "ascii",
     "aliases": [""],
-    "group": "Fun",
+    "group": "fun",
     "description": "criar texti em ascii",
     "examples": [
       "ascii <testo>"
