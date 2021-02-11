@@ -123,6 +123,22 @@
     ]
   },
   {
+    "name": "cookie",
+    "aliases": [],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "action",
+    "description": "dar um cookie a alguem",
+    "parameters": [
+      "User Mention"
+    ],
+    "examples": [
+      "cookie @user"
+    ]
+  },
+  {
     "name": "cry",
     "aliases": [],
     "clientPermissions": [
@@ -134,6 +150,22 @@
     "parameters": [],
     "examples": [
       "cry"
+    ]
+  },
+  {
+    "name": "cuddle",
+    "aliases": [],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "action",
+    "description": "dar um abraço carinhoso em alguem",
+    "parameters": [
+      "User Mention"
+    ],
+    "examples": [
+      "cuddle @user"
     ]
   },
   {
