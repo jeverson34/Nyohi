@@ -1,5 +1,14 @@
 [
   {
+    "name": "ascii",
+    "aliases": [""],
+    "group": "Fun",
+    "description": "criar texti em ascii",
+    "examples": [
+      "ascii <testo>"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
