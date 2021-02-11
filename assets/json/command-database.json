@@ -92,7 +92,7 @@
   },
   {
     "name": "baka",
-    "aliases": [],
+    "aliases": ["idiota"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -108,7 +108,7 @@
   },
   {
     "name": "blush",
-    "aliases": [],
+    "aliases": ["corar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -124,7 +124,7 @@
   },
   {
     "name": "cookie",
-    "aliases": [],
+    "aliases": ["biscoito"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -140,7 +140,7 @@
   },
   {
     "name": "cry",
-    "aliases": [],
+    "aliases": ["chorar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -154,7 +154,7 @@
   },
   {
     "name": "cuddle",
-    "aliases": [],
+    "aliases": ["carinho"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -170,7 +170,7 @@
   },
   {
     "name": "dance",
-    "aliases": [],
+    "aliases": ["dançar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -184,7 +184,7 @@
   },
   {
     "name": "disgust",
-    "aliases": [],
+    "aliases": ["nojo"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -200,13 +200,13 @@
   },
   {
     "name": "feed",
-    "aliases": [],
+    "aliases": ["alimentar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "Envia um gif do RPG `feed` para o chat, direcionado ao usuário mencionado, se houver. Normalmente interpretado como 「O usuário a quem este comando é direcionado foi alimentado」. Use para indicar que você deseja alimentar o usuário.",
+    "description": "Envia um gif do RPG `feed` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário a quem este comando é direcionado foi alimentado」. Use para indicar que você deseja alimentar o usuário.",
     "parameters": [
       "User Mention"
     ],
@@ -216,7 +216,7 @@
   },
   {
     "name": "happy",
-    "aliases": [],
+    "aliases": ["feliz"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -230,7 +230,7 @@
   },
   {
     "name": "holdhands",
-    "aliases": [],
+    "aliases": ["segurarmão", "hdh"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -246,7 +246,7 @@
   },
   {
     "name": "hug",
-    "aliases": [],
+    "aliases": ["abraçar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -262,14 +262,14 @@
   },
   {
     "name": "kill",
-    "aliases": [],
+    "aliases": ["matar"],
     "nsfw": true,
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "Envia um gif de roleplay `kill` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário que usou este comando deseja matar o usuário mencionado」. Use para indicar que você quer / quer matar o usuário mencionado (o contexto pode variar). Este é um comando de interpretação de papéis e deve ser usado como uma piada, entretanto, será limitado a um canal nsfw devido à natureza sensível deste comando. O contexto não deve incluir crimes reais.",
+    "description": "Envia um gif de roleplay `kill` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário que usou este comando deseja matar o usuário mencionado」. Use para indicar que você quer matar o usuário mencionado (o contexto pode variar). Este é um comando de interpretação de papéis e deve ser usado como uma piada. O contexto não deve incluir crimes reais.",
     "parameters": [
       "User Mention"
     ],
@@ -279,7 +279,7 @@
   },
   {
     "name": "kiss",
-    "aliases": [],
+    "aliases": ["beijar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -295,7 +295,7 @@
   },
   {
     "name": "lick",
-    "aliases": [],
+    "aliases": ['lamber"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -311,7 +311,7 @@
   },
   {
     "name": "midfing",
-    "aliases": [],
+    "aliases": ["dedo"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -329,7 +329,8 @@
   {
     "name": "pat",
     "aliases": [
-      "headpat"
+      "headpat",
+      "tapinha"
     ],
     "clientPermissions": [
       "EMBED_LINKS",
@@ -346,7 +347,7 @@
   },
   {
     "name": "poke",
-    "aliases": [],
+    "aliases": ["cutucar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -362,13 +363,13 @@
   },
   {
     "name": "slap",
-    "aliases": [],
+    "aliases": ["tapa"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "Envia um gif de roleplay `tapa` para o chat, direcionado ao usuário mencionado, se houver. Normalmente interpretado como 「O usuário a quem este comando é direcionado levou um tapa」. Use para indicar que você quer dar um tapa no usuário mencionado (o contexto pode variar).",
+    "description": "Envia um gif de roleplay `tapa` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário a quem este comando é direcionado levou um tapa」. Use para indicar que você quer dar um tapa no usuário mencionado (o contexto pode variar).",
     "parameters": [
       "User Mention"
     ],
@@ -378,23 +379,23 @@
   },
   {
     "name": "sleep",
-    "aliases": [],
+    "aliases": ["dormir"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "Coloca o usuário para dormir..",
+    "description": "Enviar um gif de roleplay `sleep` para o chat. Normalmente interpretado como 「o usuario que usou o comando está dormindo」. Use para indicar que você está dormindo.",
     "parameters": [
       "User Mention"
     ],
     "examples": [
-      "hug @user"
+      "sleep @user"
     ]
   },
   {
     "name": "smile",
-    "aliases": [],
+    "aliases": ["sorrir"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -425,7 +426,8 @@
   {
     "name": "suicide",
     "aliases": [
-      "kms"
+      "kms",
+      "suicidio"
     ],
     "nsfw": true,
     "clientPermissions": [
@@ -442,13 +444,13 @@
   },
   {
     "name": "tickle",
-    "aliases": [],
+    "aliases": ["cocegas"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "Envia um gif de roleplay `tickle` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário a quem este comando é direcionado foi pressionado」. Use para indicar que você agradou ao usuário mencionado (o contexto pode variar).",
+    "description": "Envia um gif de roleplay `tickle` para o chat, direcionado ao usuário mencionado. Normalmente interpretado como 「O usuário a quem este comando é direcionado foi pressionado」. Use para indicar que você fez cócegas no usuario (o contexto pode variar).",
     "parameters": [
       "User Mention"
     ],
@@ -458,7 +460,7 @@
   },
   {
     "name": "wave",
-    "aliases": [],
+    "aliases": ["acenar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
@@ -474,7 +476,7 @@
   },
   {
     "name": "wink",
-    "aliases": [],
+    "aliases": ["piscar"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
