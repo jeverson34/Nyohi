@@ -295,7 +295,7 @@
   },
   {
     "name": "lick",
-    "aliases": ['lamber"],
+    "aliases": ["lamber"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
