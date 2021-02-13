@@ -40,7 +40,7 @@
   },
   {
     "name": "nowplaying",
-    "aliases": ['np',"now-playing","current","current-song"],
+    "aliases": ["np","now-playing","current","current-song"],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS"
