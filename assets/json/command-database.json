@@ -1,31 +1,5 @@
 [
   {
-    "name": "filter",
-    "aliases": ["fi"],
-    "clientPermissions": [
-      "EMBED_LINKS",
-      "ADD_REACTIONS"
-    ],
-    "group": "musica",
-    "description": "Definir áudio - efeitos",
-    "examples": [
-      "filter <Filtertype>"
-    ]
-  },
-  {
-    "name": "loop",
-    "aliases": ["l"],
-    "clientPermissions": [
-      "EMBED_LINKS",
-      "ADD_REACTIONS"
-    ],
-    "group": "musica",
-    "description": "Alternar loop de música",
-    "examples": [
-      "loop"
-    ]
-  },
-  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
