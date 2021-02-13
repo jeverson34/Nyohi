@@ -52,6 +52,19 @@
     ]
   },
   {
+    "name": "pause",
+    "aliases": [],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "musica",
+    "description": "Pause a música que está tocando",
+    "examples": [
+      "pause"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
