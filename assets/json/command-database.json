@@ -80,16 +80,122 @@
     ]
   },
   {
-    "name": "queue",
-    "aliases": ["qu"],
+    "name": "radio",
+    "aliases": [],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+      "CONNECT",
+      "SPEAK"
+    ],
+    "group": "musica",
+    "description": "Toque uma Radiostação",
+    "examples": [
+      "radio <1-34>"
+    ]
+  },
+  {
+    "name": "remove",
+    "aliases": [],
     "clientPermissions": [
       "EMBED_LINKS",
       "ADD_REACTIONS",
     ],
     "group": "musica",
-    "description": "Mostra a fila de músicas e agora está tocando.",
+    "description": "Remover música da fila",
     "examples": [
-      "queue"
+      "remove"
+    ]
+  },
+  {
+    "name": "resume",
+    "aliases": ["r"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Despausar a música atual",
+    "examples": [
+      "resume"
+    ]
+  },
+  {
+    "name": "search",
+    "aliases": ["find"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Despausar a música atual",
+    "examples": [
+      "search <TITEL | URL>"
+    ]
+  },
+  {
+    "name": "shuffle",
+    "aliases": ["mix"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Despausar a música atual",
+    "examples": [
+      "shuffle"
+    ]
+  },
+  {
+    "name": "skip",
+    "aliases": ["s"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Despausar a música atual",
+    "examples": [
+      "skip"
+    ]
+  },
+  {
+    "name": "skipto",
+    "aliases": ["st", "jump"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Pule para o número da fila selecionado",
+    "examples": [
+      "skipto"
+    ]
+  },
+  {
+    "name": "stop",
+    "aliases": ["leave", "end"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Para a música",
+    "examples": [
+      "stop"
+    ]
+  },
+  {
+    "name": "volume",
+    "aliases": ["vol"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Mudar o volume",
+    "examples": [
+      "volume <0-200>"
     ]
   },
   {
