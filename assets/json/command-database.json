@@ -1,5 +1,18 @@
 [
   {
+    "name": "filter",
+    "aliases": ["fi"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "musica",
+    "description": "Definir áudio - efeitos",
+    "examples": [
+      "filter <Filtertype>"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
