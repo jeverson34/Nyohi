@@ -80,6 +80,19 @@
     ]
   },
   {
+    "name": "queue",
+    "aliases": ["qu"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "musica",
+    "description": "Mostra a fila de músicas e agora está tocando.",
+    "examples": [
+      "queue"
+    ]
+  },
+  {
     "name": "radio",
     "aliases": [],
     "clientPermissions": [
@@ -99,7 +112,7 @@
     "aliases": [],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Remover música da fila",
@@ -112,7 +125,7 @@
     "aliases": ["r"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Despausar a música atual",
@@ -125,7 +138,7 @@
     "aliases": ["find"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Despausar a música atual",
@@ -138,7 +151,7 @@
     "aliases": ["mix"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Despausar a música atual",
@@ -151,7 +164,7 @@
     "aliases": ["s"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Despausar a música atual",
@@ -164,7 +177,7 @@
     "aliases": ["st", "jump"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Pule para o número da fila selecionado",
@@ -177,7 +190,7 @@
     "aliases": ["leave", "end"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Para a música",
@@ -190,7 +203,7 @@
     "aliases": ["vol"],
     "clientPermissions": [
       "EMBED_LINKS",
-      "ADD_REACTIONS",
+      "ADD_REACTIONS"
     ],
     "group": "musica",
     "description": "Mudar o volume",
