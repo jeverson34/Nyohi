@@ -65,6 +65,21 @@
     ]
   },
   {
+    "name": "play",
+    "aliases": ["p"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+      "CONNECT",
+      "SPEAK"
+    ],
+    "group": "musica",
+    "description": "Toca música do YouTube/Stream",
+    "examples": [
+      "play <TITLE | URL>"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
