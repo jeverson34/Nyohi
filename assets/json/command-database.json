@@ -26,6 +26,19 @@
     ]
   },
   {
+    "name": "lyrics",
+    "aliases": ["ly", "text"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "musica",
+    "description": "Obtenha a letra da música que está tocando",
+    "examples": [
+      "lyrics"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
