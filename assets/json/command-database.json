@@ -39,6 +39,19 @@
     ]
   },
   {
+    "name": "nowplaying",
+    "aliases": ["np","now-playing","current","current-song"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS"
+    ],
+    "group": "musica",
+    "description": "Mostrar música atual",
+    "examples": [
+      "nowplaying"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
