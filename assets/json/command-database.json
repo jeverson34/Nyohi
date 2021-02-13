@@ -80,6 +80,19 @@
     ]
   },
   {
+    "name": "queue",
+    "aliases": ["qu"],
+    "clientPermissions": [
+      "EMBED_LINKS",
+      "ADD_REACTIONS",
+    ],
+    "group": "musica",
+    "description": "Mostra a fila de músicas e agora está tocando.",
+    "examples": [
+      "queue"
+    ]
+  },
+  {
     "name": "cat",
     "aliases": ["gato"],
     "clientPermissions": [
