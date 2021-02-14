@@ -961,7 +961,7 @@
     "description": "Desenha o avatar de um usuário sobre o avatar de outro usuário",
     "examples": [
       "avatarfusion @exemple",
-      "avatarfuse nameexeple"
+      "avatarfuse nameexeple",
       "fuseavatar 218728372813738"
     ]
   },
