@@ -949,9 +949,47 @@
     "name": "ascii",
     "aliases": [""],
     "group": "fun",
-    "description": "criar texti em ascii",
+    "description": "criar texto em ascii",
     "examples": [
       "ascii <texto>"
+    ]
+  },
+  {
+    "name": "avatarfusion",
+    "aliases": ["avatarfuse", "fuseavatar"],
+    "group": "fun",
+    "description": "Desenha o avatar de um usuário sobre o avatar de outro usuário",
+    "examples": [
+      "avatarfusion @exemple",
+      "avatarfuse nameexeple"
+      "fuseavatar 218728372813738"
+    ]
+  },
+  {
+    "name": "clyde",
+    "aliases": [""],
+    "group": "fun",
+    "description": "Mostra mensagem enviada por Clyde Bot",
+    "examples": [
+      "clyde <texto>"
+    ]
+  },
+  {
+    "name": "dados",
+    "aliases": [""],
+    "group": "fun",
+    "description": "jogue os dados",
+    "examples": [
+      "dados 5"
+    ]
+  },
+  {
+    "name": "facepalm",
+    "aliases": ["fp"],
+    "group": "fun",
+    "description": "Mostra o usuário Facepalmed",
+    "examples": [
+      "facepalm [username | nickname | mention | ID] (opicional)"
     ]
   },
   {
@@ -965,8 +1003,17 @@
     "group": "fun",
     "description": "Ganhe ou perca, lance uma moeda [cara ou coroa]",
     "examples": [
-      "flip head",
-      "coinflip tail"
+      "flip cara",
+      "coinflip coroa"
+    ]
+  },
+  {
+    "name": "forca",
+    "aliases": [""],
+    "group": "fun",
+    "description": "jogue o jogo da forca",
+    "examples": [
+      "forca"
     ]
   },
   {
