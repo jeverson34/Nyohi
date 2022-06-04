@@ -326,7 +326,7 @@
       "ADD_REACTIONS"
     ],
     "group": "action",
-    "description": "ficar corado",
+    "description": "Envia um gif de roleplay `blush` para o chat. Normalmente interpretado como 「O usuário ficou corado」",
     "parameters": [
       "User Mention"
     ],
