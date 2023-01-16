@@ -6,7 +6,7 @@ module.exports = {
   name: 'advice',
   aliases: [ 'tips', 'advise' ],
   group: 'fun',
-  description: 'Generate a random useless advice',
+  description: 'Gere um conselho aleatório inútil',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'advice',
@@ -27,7 +27,6 @@ module.exports = {
       new MessageEmbed()
       .setColor(Color)
       .setTitle(data.slip.advice)
-      .setFooter(`Advice | \©️${new Date().getFullYear()} Nyohi`)
     );
   }
 };

@@ -4,10 +4,10 @@ const neko = new client();
 
 module.exports = {
   name: "dog",
+  aliases: ["cachorro"],
   category: "Animais",
-  aliases: [],
-  description: "sends random dog image",
-  usage: "[command]",
+  description: "Mandar uma foto aleatoria de um cachorro",
+  usage: "dog",
   run: async (client, message, args) => {
   //command
 
@@ -15,10 +15,11 @@ module.exports = {
         let owo = (await neko.sfw.woof());
 
         const dog = new Discord.MessageEmbed()
-        .setTitle("Random dog Image")
+        .setTitle("Random dog Image 🐶")
         .setImage(owo.url)
-        .setColor(`#000000`)
-        .setURL(owo.url);
+        .setColor(Color)
+        .setFooter(message.author.tag)
+        .setTimestamp();
         message.channel.send(dog);
 
 }

@@ -1,10 +1,11 @@
 const { MessageEmbed } = require('discord.js');
+const { Color } = require("../../config.js");
 
 module.exports = {
   name: 'respect',
   aliases: [ 'f', 'rp', '+rp' ],
   group: 'fun',
-  description: 'Show thy respect. Accepts arguments.',
+  description: 'Mostre o seu respeito. Aceita argumentos.',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'respect',
@@ -15,9 +16,9 @@ module.exports = {
 
     const rep = await message.channel.send(
       new MessageEmbed()
-      .setColor('GREY')
-      .setFooter(`Pressione F para prestar respeito | \©️${new Date().getFullYear()} Nyohi`)
-      .setDescription(`${message.member} prestou sua homenagem${args.length ? ` to ${args.join(' ')}.` : ''}`)
+      .setColor('Color')
+      .setFooter(`Pressione F para prestar respeito`)
+      .setDescription(`${message.member} prestou sua homenagem${args.length ? ` para ${args.join(' ')}.` : ''}`)
     );
 
     await message.delete().catch(() => null);

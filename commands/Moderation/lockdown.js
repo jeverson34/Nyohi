@@ -5,7 +5,7 @@ module.exports = {
   permissions: [ 'MANAGE_MESSAGES', 'MANAGE_CHANNELS' ],
   clientPermissions: [ 'MANAGE_CHANNELS' ],
   group: 'moderation',
-  description: `[Prevent/Allow] users from sending messages in the current channel. Permission Overwrites will be lost.`,
+  description: `[Impedir / Permitir] que os usuários enviem mensagens no canal atual. As sobregravações de permissão serão perdidas.`,
   examples: [
     'lockdown',
     'lock',
@@ -26,14 +26,14 @@ module.exports = {
       id: message.guild.me.id,
       allow: [ 'SEND_MESSAGES' ]
     }
-  ], `Mai Lockdown Command: ${message.author.tag}`)
+  ], `Nyohi Lockdown Command: ${message.author.tag}`)
   .then((ch) => message.channel.send(
     ch.permissionsFor(message.guild.roles.everyone).has('SEND_MESSAGES')
-    ? '\\✔️ Lockdown Ended! Everyone can now send messages on this channel'
-    : '\\✔️ Lockdown has initiated! Users withour special permissions will not be able to send messages here!'
+    ? '\\✔️ O bloqueio foi iniciado! Apenas usuários com nossas permissões especiais poderão enviar mensagens aqui!'
+    : '\\✔️ Bloqueio encerrado! Todos agora podem enviar mensagens neste canal'
   )).catch(() => message.channel.send(
     message.channel.permissionsFor(message.guild.roles.everyone).has('SEND_MESSAGES')
-    ? '\\❌ Unable to Lockdown this channel!'
-    : '\\❌ Unable to restore this channel!'
+    ? '\\❌ Incapaz de bloquear este canal!'
+    : '\\❌ Incapaz de restaurar este canal!'
   ))
 };

@@ -1,10 +1,11 @@
 const client = require('nekos.life');
 const Discord = require('discord.js')
 const neko = new client();
+const { Color } = require("../../config.js");
 
 module.exports = {
   name: "cat",
-  aliases: [ ],
+  aliases: ["gato"],
   category: "Animais",
   description: "sends random cat image",
   usage: "[command]",

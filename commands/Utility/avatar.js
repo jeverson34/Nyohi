@@ -36,8 +36,7 @@ module.exports = {
       new MessageEmbed()
       .setColor(color)
       .setImage(avatar)
-      .setFooter(`Avatar | \©️${new Date().getFullYear()} Nyohi`)
-      .setDescription(`[Avatar for **${user.tag}**](${avatar})`)
+      .setDescription(`[Avatar de **${user.tag}**](${avatar})`)
     );
   }
 };

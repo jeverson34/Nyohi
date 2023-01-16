@@ -4,7 +4,7 @@ module.exports = {
   name: 'roll',
   aliases: ["roll"],
   group: 'fun',
-  description: 'Generate a random number from 1-[selected number]',
+  description: 'Gere um número aleatório de 1- [número selecionado]',
   examples: [
     'roll 10',
     'roll 100',

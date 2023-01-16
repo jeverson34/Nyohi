@@ -1,6 +1,5 @@
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
-const { Color } = require("../../config.js");
 
 module.exports = {
   name: 'clear',
@@ -9,7 +8,7 @@ module.exports = {
   permissions: [ 'MANAGE_MESSAGES' ],
   clientPermissions: [ 'MANAGE_MESSAGES', 'EMBED_LINKS' ],
   group: 'moderation',
-  description: 'Delete messages from this channel. Will not delete messages older than two (2) weeks.',
+  description: 'Exclua mensagens deste canal. Não excluirá mensagens com mais de duas (2) semanas.',
   parameters: [ 'Quantity of Message' ],
   examples: [
     'clear 10',
@@ -21,7 +20,7 @@ module.exports = {
     quantity = Math.round(quantity);
 
     if (!quantity || quantity < 2 || quantity > 100){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, Please provide the quantity of messages to be deleted which must be greater than two (2) and less than one hundred (100)`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Forneça a quantidade de mensagens a serem excluídas, que deve ser maior que duas (2) e menor que cem (100)`);
     };
 
     return message.channel.bulkDelete(quantity, true)
@@ -53,7 +52,7 @@ module.exports = {
       return message.channel.send(
         `Successfully deleted **${count}** messages from this channel!`,
         new MessageEmbed()
-        .setColor(Color)
+        .setColor('GREY')
         .setDescription([
           `[\`📄 View\`](${url ? `https://txt.discord.website/?txt=${url}/${id}/bulkdlt-${_id}`:''})`,
           `[\`📩 Download\`](${res[0]})`

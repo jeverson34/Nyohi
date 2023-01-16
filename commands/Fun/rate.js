@@ -12,7 +12,7 @@ module.exports = {
   run: (client, message, args) => {
 
     if (!args.length){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}! Give me something to rate!!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}! Dê-me algo para avaliar !!`);
     };
 
     const raw = args.join(' ').replace(/[^\w\s]/gi,1202)
@@ -32,9 +32,7 @@ module.exports = {
     ][Math.floor(rate / 10)];
 
     if ([
-      'mai san', 'mmai1202san', 'mai', 'mai sakurajima',
-      'mai1202sakurajima', 'sakurajima mai', 'sakurajima1202mai',
-      'mai senpai', 'mai1202senpai', '1202120212027020744523173070611202'
+      'andreza linda', "andreza", "nyohi", "jeverson"
     ].includes(raw.toLowerCase())){
       rate = 100;
     };

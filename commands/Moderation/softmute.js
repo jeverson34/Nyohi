@@ -18,7 +18,7 @@ module.exports = {
     const muted = message.guild.roles.cache.get(muteID) || {};
 
     if (!member.match(/\d{17,19}/)){
-      return message.channel.send(`\\❌ Please provide the ID or mention the user to mute.`);
+      return message.channel.send(`\\❌ Forneça o ID ou mencione o usuário para silenciar.`);
     };
 
     member = await message.guild.members
@@ -26,29 +26,29 @@ module.exports = {
     .catch(() => null);
 
     if (!member){
-      return message.channel.send(`\\❌ Unable to mute user: User not found.`);
+      return message.channel.send(`\\❌ Não foi possível silenciar o usuário: usuário não encontrado.`);
     } else if (message.member.roles.highest.position < member.roles.highest.position){
-      return message.channel.send(`\\❌ ${message.author}, you cannot mute user whose roles are higher than yours!`);
+      return message.channel.send(`\\❌ ${message.author}, você não pode silenciar usuários cujas funções são superiores às suas!`);
     } else if (member.id === client.user.id){
-      return message.channel.send(`\\❌ ${message.author}, no don't mute me!`);
+      return message.channel.send(`\\❌ ${message.author}, não, não me mude!`);
     } else if (member.user.bot){
-      return message.channel.send(`\\❌ ${message.author}, you cannot mute bots!`);
+      return message.channel.send(`\\❌ ${message.author}, você não pode silenciar bots!`);
     } else if (message.member.id === member.id){
-      return message.channel.send(`\\❌ ${message.author}, you cannot mute yourself!`);
+      return message.channel.send(`\\❌ ${message.author}, você não pode se silenciar!`);
     } else if (member.roles.cache.has(muted.id)){
-      return message.channel.send(`\\❌ ${message.author}, **${member.user.tag}** is alredy muted server-wide!`);
+      return message.channel.send(`\\❌ ${message.author}, **${member.user.tag}** já está mudo em todo o servidor!`);
     };
 
     return message.channel.updateOverwrite(member, {
       SEND_MESSAGES: !message.channel.permissionsFor(member).has('SEND_MESSAGES')
     }).then((ch) => message.channel.send(
       ch.permissionsFor(member).has('SEND_MESSAGES')
-      ? `\\✔️ **${member.user.tag}** has been unmuted from this channel!`
-      : `\\✔️ **${member.user.tag}** has been muted from this channel!`
+      ? `\\✔️ **${member.user.tag}** foi silenciado neste canal!`
+      : `\\✔️ **${member.user.tag}** foi reativado neste canal!`
     )).catch(() => message.channel.send(
       message.channel.permissionsFor(member).has('SEND_MESSAGES')
-      ? `\\❌ Unable to mute **${member.user.tag}** on this channel!`
-      : `\\❌ Unable to unmute **${member.user.tag}** on this channel!`
+      ? `\\❌ Incapaz de mute **${member.user.tag}** neste canal!`
+      : `\\❌ Incapaz de unmute **${member.user.tag}** neste canal!`
     ));
   }
 };

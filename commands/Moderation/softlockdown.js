@@ -5,7 +5,7 @@ module.exports = {
   permissions: [ 'MANAGE_MESSAGES', 'MANAGE_CHANNELS' ],
   clientPermissions: [ 'MANAGE_CHANNELS' ],
   group: 'moderation',
-  description: `[Prevent/Allow] users without special permissions from sending messages in the current channel. Permission Overwrites will be kept.`,
+  description: `[Prevenir / Permitir] que usuários sem permissões especiais enviem mensagens no canal atual. As sobregravações de permissão serão mantidas.`,
   examples: [
     'softlockdown',
     'softlock'
@@ -15,15 +15,15 @@ module.exports = {
     {
       SEND_MESSAGES: !message.channel.permissionsFor(message.guild.roles.everyone).has('SEND_MESSAGES')
     },
-    `Mai Soft-Lockdown Command: ${message.author.tag}`)
+    `Nyohi Soft-Lockdown Command: ${message.author.tag}`)
   .then((ch) => message.channel.updateOverwrite(client.user, { SEND_MESSAGES: true }))
   .then((ch) => message.channel.send(
     ch.permissionsFor(message.guild.roles.everyone).has('SEND_MESSAGES')
-    ? '\\✔️ Lockdown Ended! Everyone can now send messages on this channel'
-    : '\\✔️ Lockdown has initiated! Users without roles or special permissions will not be able to send messages here!'
+    ? '\\✔️  Bloqueio encerrado! Todos agora podem enviar mensagens neste canal'
+    : '\\✔️ O bloqueio foi iniciado! Usuários sem funções ou permissões especiais não poderão enviar mensagens aqui!'
   )).catch(() => message.channel.send(
     message.channel.permissionsFor(message.guild.roles.everyone).has('SEND_MESSAGES')
-    ? '\\❌ Unable to Soft-lockdown this channel!'
-    : '\\❌ Unable to restore this channel!'
+    ? '\\❌ Incapaz de bloquear suavemente este canal!'
+    : '\\❌ Incapaz de restaurar este canal!'
   ))
 };

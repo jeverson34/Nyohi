@@ -1,5 +1,6 @@
 const html2md = require('html2markdown');
 const { Color } = require("../../config.js");
+const { Mac } = require("../../image.js");
 const { MessageEmbed } = require('discord.js');
 const { decode } = require('he');
 const fetch = require('node-fetch');
@@ -10,10 +11,10 @@ module.exports = {
   aliases: ["steam"],
   cooldown: {
     time: 10000,
-    message: 'Accessing Steam has been rate limited to 1 use per user per 10 seconds'
+    message: 'O acesso ao Steam tem uma taxa limitada a 1 uso por usuário a cada 10 segundos'
   },
   group: 'utility',
-  description: 'Searches <:steam:805240697262178315> [Steam](https://store.steampowered.com/ \'Steam Homepage\') for games!, or Doki-doki literature club, if no query is provided.',
+  description: 'Pesquisas <:steam:805240697262178315> [Steam](https://store.steampowered.com/ \'Steam Homepage\') para jogos! ou clube de literatura Doki-doki, se nenhuma consulta for fornecida.',
   parameters: [ 'Search Query' ],
   examples: [
     'steam dota2',
@@ -28,7 +29,7 @@ module.exports = {
     .catch(() => null);
 
     if (!res || !res.total){
-      return message.channel.send(`\\❌ Could not find **${query}** on <:steam:805240697262178315> steam`);
+      return message.channel.send(`\\❌Não consegui encontrar **${query}** na <:steam:805240697262178315> steam`);
     };
 
     const body = await fetch (`https://store.steampowered.com/api/appdetails/?cc=us&l=en&appids=${res.items[0].id}`)
@@ -36,11 +37,11 @@ module.exports = {
     .catch(() => null);
 
     if (!body){
-      return message.channel.send(`\\❌ Could not find **${query}** on <:steam:805240697262178315> steam`);
+      return message.channel.send(`\\❌ Não consegui encontrar **${query}** na <:steam:805240697262178315> steam`);
     };
 
     const data = body[res.items[0].id].data;
-    const platformLogo = { windows: '<:windows:767062364042166321>' , mac: '<:mac:767062376440659978>', linux: '<:linux:767062376440659978>' };
+    const platformLogo = { windows: Mac , mac:Mac, linux: ' <:linux:808051339019943977>' };
     const platformrequirements = { windows: 'pc_requirements', mac: 'mac_requirements', linux: 'linux_requirements' };
     const current = (data.price_overview || 'Free').toLocaleString('pt-BR', { style: 'currency', currency: 'USD' });
     const original = (data.price_overview || 'Free').toLocaleString('pt-BR', { style: 'currency', currency: 'USD' });
@@ -60,14 +61,14 @@ module.exports = {
       .setURL(`https://store.steampowered.com/app/${data.steam_appid}`)
       .setFooter(`steam | \©️${new Date().getFullYear()} Nyohi`)
       .addFields([
-        { name: 'Price', value: `•\u2000 ${price}`, inline: true },
+        { name: 'Preço', value: `•\u2000 ${price}`, inline: true },
         { name: 'Metascore', value: `•\u2000 ${data.metacritic ||'???'}`, inline: true },
-        { name: 'Release Date', value: `•\u2000 ${data.release_date.data||'???'}`, inline: true },
-        { name: 'Developers', value: data.developers.map(m => `• ${m}`).join('\n'), inline: true },
-        { name: 'Categories', value: data.categories.map(m => `• ${m.description}`).join('\n'), inline: true },
-        { name: 'Genres', value: data.genres.map(m => `• ${m.description}`).join('\n'), inline: true },
+        { name: 'Data de lançamento', value: `•\u2000 ${data.release_date.data||'???'}`, inline: true },
+        { name: 'Desenvolvedores', value: data.developers.map(m => `• ${m}`).join('\n'), inline: true },
+        { name: 'Categorias', value: data.categories.map(m => `• ${m.description}`).join('\n'), inline: true },
+        { name: 'Gêneros', value: data.genres.map(m => `• ${m.description}`).join('\n'), inline: true },
         { name: '\u200b', value: text.truncate(decode(data.detailed_description.replace(/(<([^>]+)>)/ig,' ')),980)},
-        { name: 'Supported Languages', value: `\u2000${text.truncate(html2md(data.supported_languages), 997)}`},
+        { name: 'Idiomas Suportados', value: `\u2000${text.truncate(html2md(data.supported_languages), 997)}`},
         ...platforms
       ])
     );

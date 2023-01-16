@@ -6,7 +6,7 @@ module.exports = {
   name: 'fortune',
   aliases: [ 'ft', 'fortunecookies', 'fortunecookie' ],
   group: 'fun',
-  description: 'Generate a random fortune',
+  description: 'Gere uma fortuna aleatória',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'fortune',
@@ -18,7 +18,6 @@ module.exports = {
     new MessageEmbed()
     .setColor(Color)
     .setAuthor(message.author.tag)
-    .setFooter(`Fortune | \©️${new Date().getFullYear()} Mai`)
     .setDescription(fortunes[Math.floor(Math.random() * fortunes.length)])
   )
 };

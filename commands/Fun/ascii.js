@@ -1,10 +1,10 @@
 const figlet = require('figlet');
 
 module.exports = {
-  name: "Ascii",
+  name: "ascii",
   aliases: [""],
   category: "Fun",
-  description: "criar texti em ascii",
+  description: "criar texto em ascii",
   usage: "Ascii <texto>",
 
     async run (client, message, args){

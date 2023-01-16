@@ -4,7 +4,7 @@ module.exports = {
   name: 'color',
   aliases: [ 'colour', 'hex' ],
   group: 'utility',
-  description: 'Shows a random color or a preview of the given color',
+  description: 'Mostra uma cor aleatória ou uma antevisão da cor dada',
   parameters: [ 'hex code' ],
   examples: [
     'color',
@@ -19,7 +19,6 @@ module.exports = {
       new MessageEmbed()
       .setColor(`#${color}`)
       .setImage('https://dummyimage.com/200/' + color)
-      .setFooter(`Color ${color} | \©️${new Date().getFullYear()} Nyohi`)
     );
   }
 };

@@ -6,7 +6,7 @@ module.exports = {
   aliases: [ 'permsfor' ],
   group: 'utility',
   guildOnly: true,
-  description: 'List the server permissions of mentioned user or provided ID',
+  description: 'Liste as permissões de servidor do usuário mencionado ou ID fornecido',
   parameters: [ 'User ID/Mention' ],
   examples: [
     'permissionsfor @user',
@@ -23,7 +23,7 @@ module.exports = {
     .catch(() => null);
 
     if (!member){
-      return message.channel.send(`\\❌ User not found.`);
+      return message.channel.send(`\\❌ Usuário não encontrado.`);
     };
 
     const sp = member.permissions.serialize();
@@ -32,13 +32,12 @@ module.exports = {
     return message.channel.send(
       new MessageEmbed()
       .setColor(member.displayColor || Color)
-      .setTitle(`${member.displayName}'s Permissions`)
-      .setFooter(`permissionsfor | \©️${new Date().getFullYear()} Nyohi`)
+      .setTitle(`Permissões de ${member.displayName}`)
       .setDescription([
-        '\\♨️ - This Server',
-        '\\#️⃣ - The Current Channel',
-        '```properties',
-        '♨️ | #️⃣ | Permission',
+        '\\♨️ - Este servidor',
+        '\\#️⃣ - O Canal Atual',
+        '```propriedades',
+        '♨️ | #️⃣ | Permissão',
         '========================================',
         `${Object.keys(sp).map(perm => [
           sp[perm] ? '✔️ |' : '❌ |',

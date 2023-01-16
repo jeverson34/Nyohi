@@ -16,11 +16,11 @@ module.exports = {
   run: async (client, message, [sign] ) => {
 
     if (!sign){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, Please give me a sign to get the horoscope of!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Por favor, dê-me um signo para obter o horóscopo de!`);
     };
 
     if (!Object.keys(signs).includes(sign.toLowerCase())){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, **${sign}** is not a valid sign!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, **${sign}** não é um sinal válido! tente me dar o nome em English`);
     };
 
     const data = await fetch(`http://sandipbgt.com/theastrologer/api/horoscope/${sign}/today`)
@@ -34,13 +34,12 @@ module.exports = {
     return message.channel.send(
       new MessageEmbed()
       .setColor(Color)
-      .setFooter(`Horoscope | \©️${new Date().getFullYear()} Mai`)
       .setAuthor(signs[sign.toLowerCase()] + ' ' + data.sunsign || sign)
       .setDescription(data.horoscope.replace('(c) Kelli Fox, The Astrologer, http://new.theastrologer.com', ''))
       .addFields([
-        { name: 'Mood', inline: true, value: data.meta.mood || '\u200b' },
-        { name: 'Intensity', inline: true, value: data.meta.intensity || '\u200b' },
-        { name: 'Keywords', inline: true, value: data.meta.keywords || '\u200b' }
+        { name: 'Humor', inline: true, value: data.meta.mood || '\u200b' },
+        { name: 'Intensidade', inline: true, value: data.meta.intensity || '\u200b' },
+        { name: 'Palavras-chave', inline: true, value: data.meta.keywords || '\u200b' }
       ])
     );
   }

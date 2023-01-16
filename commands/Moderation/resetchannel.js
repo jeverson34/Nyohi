@@ -5,7 +5,7 @@ module.exports = {
   permissions: [ 'MANAGE_CHANNELS' ],
   clientPermissions: [ 'MANAGE_CHANNELS' ],
   group: 'moderation',
-  description: `Removes all permission overwrites and resets @everyone permissions to \`unset\``,
+  description: `Remove todas as substituições de permissão e redefine as permissões @everyone para \`unset\``,
   examples: [
     'resetchannel',
     'resetch'
@@ -13,6 +13,6 @@ module.exports = {
   run: (client, message) => message.channel.overwritePermissions([
     { id: message.guild.roles.everyone.id }
   ])
-  .then(ch => message.channel.send('\\✔️ Sucesssfully reset the permissions for this channel.'))
-  .catch(() => message.channel.send('\\❌ Unable to reset the permissions for this channel.'))
+  .then(ch => message.channel.send('\\✔️ Redefinir com sucesso as permissões para este canal.'))
+  .catch(() => message.channel.send('\\❌ Não é possível redefinir as permissões para este canal.'))
 };

@@ -1,3 +1,5 @@
+const { Owners } = require("../../config.js");
+
 module.exports = {
   name: 'ban',
   aliases: ["ban"],
@@ -5,7 +7,7 @@ module.exports = {
   permissions: [ 'BAN_MEMBERS' ],
   clientPermissions: [ 'BAN_MEMBERS' ],
   group: 'moderation',
-  description: 'Ban mentioned user from this server.',
+  description: 'Banir o usuário mencionado deste servidor.',
   parameters: [ 'User Mention | ID', 'Ban Reason'],
   examples: [
     'ban @user breaking server rules',
@@ -15,7 +17,7 @@ module.exports = {
   run: async (client, message, [member = '', ...reason] ) => {
 
     if (!member.match(/\d{17,19}/)){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, Please provide the ID or mention the user to ban. [mention first before adding the reason]`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Forneça o ID ou mencione o usuário para banir. [mencione primeiro antes de adicionar o motivo]`);
     };
 
     member = await message.guild.members
@@ -23,34 +25,34 @@ module.exports = {
     .catch(() => null);
 
     if (!member){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, User could not be found! Please ensure the supplied ID is valid. Mention user for more precision on pinpointing user.`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Usuário não encontrado! Certifique-se de que o ID fornecido é válido. Mencione o usuário para obter mais precisão ao identificar o usuário.`);
     };
 
     if (member.id === message.author.id){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, You cannot ban yourself!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Você não pode se banir!`);
     };
 
     if (member.id === client.user.id){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, Please don't ban me!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Por favor não me de ban!`);
     };
 
     if (member.id === message.guild.ownerID){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, You cannot ban a server owner!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Você não pode banir o proprietário de um servidor!`);
     };
 
-    if (client.config.owners.includes(member.id)){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, No, you can't ban my developers through me!`)
+    if (Owners.includes(member.id)){
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Não, você não pode banir meus desenvolvedores através de mim!`)
     };
 
     if (message.member.roles.highest.position < member.roles.highest.position){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, You can't ban that user! He/She has a higher role than yours`)
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Você não pode banir esse usuário! Ele / ela tem um papel mais importante do que o seu`)
     };
 
     if (!member.bannable){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, I couldn't ban that user!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, Não consegui banir aquele usuário!`);
     };
 
-    await message.channel.send(`Are you sure you want to ban **${member.user.tag}**? (y/n)`)
+    await message.channel.send(`Tem certeza que deseja banir **${member.user.tag}**? (y/n)`)
 
     const filter = _message => message.author.id === _message.author.id && ['y','n','yes','no'].includes(_message.content.toLowerCase());
     const options = { max: 1, time: 30000, errors: ['time'] };
@@ -59,14 +61,14 @@ module.exports = {
     .catch(() => false);
 
     if (!proceed){
-      return message.channel.send(`<:cancel:767062250279927818> | ${message.author}, cancelled the ban command!`);
+      return message.channel.send(`<:cancel:809446722362802246> | ${message.author}, cancelled the ban command!`);
     };
 
-    await member.send(`**${message.author.tag}** banned you from ${message.guild.name}!\n**Reason**: ${reason.join(' ') || 'Unspecified.'}`)
+    await member.send(`**${message.author.tag}** baniu você de ${message.guild.name}!\n**Reason**: ${reason.join(' ') || 'Não especificado.'}`)
     .catch(() => null);
 
-    return member.ban({ reason: `MAI Ban Command: ${message.author.tag}: ${reason.join(' ') || 'Unspecified'}`})
-    .then(_member => message.channel.send(`Successfully banned **${_member.user.tag}**`))
-    .catch(() => message.channel.send(`Failed to ban **${member.user.tag}**!`));
+    return member.ban({ reason: `Nyohi Comando Ban: ${message.author.tag}: ${reason.join(' ') || 'Não especificado'}`})
+    .then(_member => message.channel.send(`Banido com sucesso **${_member.user.tag}**`))
+    .catch(() => message.channel.send(`Falha ao banir **${member.user.tag}**!`));
   }
 };

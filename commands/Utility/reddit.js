@@ -7,7 +7,7 @@ module.exports = {
   aliases: [ 'rdt', 'subreddit', 'redd.it', 'fetchreddit' ],
   cooldown: {
     time: 10000,
-    message: 'Accessing Reddit has been rate limited to 1 use per user per 10 seconds'
+    message: 'O acesso ao Reddit tem uma taxa limitada a 1 uso por usuário a cada 10 segundos'
   },
   group: 'utility',
   description: 'Fetch a random image from the supplied subreddit',
@@ -21,8 +21,7 @@ module.exports = {
     const embed = new MessageEmbed()
     .setColor('RED')
     .setThumbnail('https://i.imgur.com/u6ROwvK.gif')
-    .setDescription(`\u200B\nFetching information from <:reddit:808773400368513044> **[r/${subreddit}](https://reddit.com/r/${subreddit})**. Please Wait.`)
-    .setFooter(`Reddit Image | \©️${new Date().getFullYear()} Mai`);
+    .setDescription(`\u200B\nBuscando informações de <:reddit:808773400368513044> **[r/${subreddit}](https://reddit.com/r/${subreddit})**. Por favor, aguarde.`)
 
     const prompt = await message.channel.send(embed);
     let res = await fetch(`https://reddit.com/r/${subreddit}.json`)
@@ -31,8 +30,8 @@ module.exports = {
 
     embed.setColor('RED')
     .setThumbnail(null)
-    .setAuthor('Invalid Subreddit','https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription(`That's an invalid/non-existent <:reddit:808773400368513044> subreddit.`);
+    .setAuthor('Subreddit inválido','https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
+    .setDescription(`Isso é inválido / inexistente <:reddit:808773400368513044> subreddit.`);
 
     if (!res || !res.data.children || !res.data.children.length){
       return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);
@@ -40,8 +39,8 @@ module.exports = {
 
     res = res.data.children.filter(m => m.data.post_hint === 'image');
 
-    embed.setAuthor('No Image Found', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription('This <:reddit:808773400368513044> subreddit does not have any image posts.');
+    embed.setAuthor('Nenhuma imagem encontrada', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
+    .setDescription('este <:reddit:808773400368513044> subreddit não possui postagens de imagens..');
 
     if (!res.length){
       return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);
@@ -52,7 +51,7 @@ module.exports = {
     };
 
     embed.setAuthor('Subreddit NSFW', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription(' Seems like you entered a nsfw subreddit in a sfw channel. Please move to nsfw channel while using this subreddit.');
+    .setDescription(' Parece que você inseriu um subreddit nsfw em um canal sfw. Por favor, vá para o canal nsfw enquanto usa este subreddit.');
 
     if (!res.length){
       return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);

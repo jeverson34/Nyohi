@@ -6,7 +6,7 @@ module.exports = {
   name: 'joke',
   aliases: [ 'haha' ],
   group: 'fun',
-  description: 'Generate a random joke from a joke API',
+  description: 'Gerar uma piada aleatória de uma API de piada',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'joke',
@@ -26,9 +26,7 @@ module.exports = {
       new MessageEmbed()
       .setColor(Color)
       .setAuthor(`${data.category} Joke`)
-      .setThumbnail('https://i.imgur.com/KOZUjcc.gif')
-      .setFooter(`Joke | \©️${new Date().getFullYear()} Mai`)
-      .setDescription(data.type === 'twopart' ? `${data.setup}\n\n||${data.delivery}||` : data.joke)
+      .setDescription(data.type === 'duas partes' ? `${data.setup}\n\n||${data.delivery}||` : data.joke)
     );
   }
 };

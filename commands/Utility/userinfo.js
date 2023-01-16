@@ -5,7 +5,7 @@ moment.locale('pt-br')
 
 module.exports = {
   name: 'userinfo',
-  aliases: ['whois'],
+  aliases: ['whois', 'user'],
   guildOnly: true,
   group: "utility",
   description: 'Fetch User Information (As of May 20, 2020 - The global function has been removed due to a possible violation to Discord ToS).',
@@ -25,7 +25,7 @@ module.exports = {
     .catch(() => null);
 
     if (!member){
-      return message.channel.send(`\\❌ | ${message.author}, Could not find that user in this server!`);
+      return message.channel.send(`\\❌ | ${message.author}, Não foi possível encontrar esse usuário neste servidor!`);
     };
 
     const user = member.user;
@@ -35,21 +35,20 @@ module.exports = {
     .catch(() => []);
 
     if (message.guild.ownerID === user.id){
-      userFlags.push('<a:GUILD_OWNER:731117984730316811>')
+      userFlags.push('<a:dono:809477601638219807>')
     };
 
     return message.channel.send(
       new MessageEmbed()
       .setColor(member.displayColor || Color)
-      .setAuthor(`Discord user ${user.tag}`, null, 'https://discord.com/')
+      .setAuthor(`Usuário Discord ${user.tag}`, null, 'https://discord.com/')
       .setDescription(userFlags.join(' '))
       .setThumbnail(user.displayAvatarURL({format: 'png', dynamic: true}))
-      .setFooter(`Userinfo | ©️${new Date().getFullYear()} Nyohi`)
       .addFields([
-        { name: 'Username', value: `**${user.username}**#${user.discriminator}`, inline: true },
-        { name: 'Type', value: user.bot ? 'Bot' : 'User', inline: true },
-        { name: 'Joined Discord', value: moment(user.createdAt).format('dddd, do MMMM YYYY') },
-        { name: `Roles [${member.roles.cache.size - 1}]`, value: member.roles.cache.filter(r => r.id !== message.guild.id).map(x => `${x}`).splice(0,50).join(' ') || '\u200b'}
+        { name: 'Nome do usuário', value: `**${user.username}**#${user.discriminator}`, inline: true },
+        { name: 'Tipo', value: user.bot ? 'Bot' : 'User', inline: true },
+        { name: 'Entrou no Discord', value: moment(user.createdAt).format('dddd, do MMMM YYYY') },
+        { name: `Cargos [${member.roles.cache.size - 1}]`, value: member.roles.cache.filter(r => r.id !== message.guild.id).map(x => `${x}`).splice(0,50).join(' ') || '\u200b'}
       ])
     );
   }

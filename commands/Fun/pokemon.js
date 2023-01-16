@@ -8,7 +8,7 @@ module.exports = {
   name: 'pokemon',
   aliases: [ 'pokedex', 'pokémon', 'pokédex' ],
   group: 'fun',
-  description: 'Find a specific pokemon using the pokédex, or pikachu if no query is provided.',
+  description: 'Encontre um pokémon específico usando o pokédex ou pikachu se nenhuma consulta for fornecida.',
   clientPermissions: [ 'EMBED_LINKS' ],
   examples: [
     'pokemon',
@@ -21,7 +21,6 @@ module.exports = {
     const query = args.join(' ') || 'Pikachu';
     const embed = new MessageEmbed()
     .setColor(Color)
-    .setFooter(`Pokédex - The Pokémon Company\©️ | \©️${new Date().getFullYear()} Nyohi`);
 
     const prompt = await message.channel.send(
       embed.setDescription(`Searching pokédex for **${query}**`)
@@ -35,14 +34,14 @@ module.exports = {
     embed.setColor('RED')
     .setThumbnail(null)
     .setAuthor('Pokédex Unavailable', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription('Pokedex provider responded with error 5xx. Please try again later.')
+    .setDescription('O provedor da Pokedex respondeu com o erro 5xx. Por favor, tente novamente mais tarde.')
 
     if (!data){
       return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);
     };
 
-    embed.setAuthor('Pokémon entry coudn\'t be found', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
-    .setDescription(`**${message.author.tag}**, I can't seem to find **${query}** from the Pokédex!`)
+    embed.setAuthor('A entrada do Pokémon não foi encontrada', 'https://cdn.discordapp.com/emojis/767062250279927818.png?v=1')
+    .setDescription(`**${message.author.tag}**, eu não consigo encontrar **${query}** da Pokédex!`)
 
     if (data.error){
       return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);
@@ -55,22 +54,22 @@ module.exports = {
     embed.setColor(Color)
     .setDescription('')
     .setThumbnail(data.sprites.animated || data.sprites.normal || null)
-    .setAuthor(`Pokédex entry #${data.id} ${data.name.toUpperCase()}`,'https://i.imgur.com/uljbfGR.png', 'https://pokemon.com/us')
+    .setAuthor(`Entrada Pokédex #${data.id} ${data.name.toUpperCase()}`,'https://i.imgur.com/uljbfGR.png', 'https://pokemon.com/us')
     .addFields([
-      { name: 'Info', value: data.description || '???' },
-      { name: 'Type', value: data.type.join('\n') || '???', inline: true },
-      { name: 'Abilities', value: data.abilities.join('\n') || '???', inline: true },
+      { name: 'Informações', value: data.description || '???' },
+      { name: 'Tipo', value: data.type.join('\n') || '???', inline: true },
+      { name: 'Habilidades', value: data.abilities.join('\n') || '???', inline: true },
       {
         name: 'Build', inline: true,
         value: [
-          `Height: **${data.height || '???'}**`,
-          `Weight: **${data.weight || '???'}**`,
-          `Gender: **${text.joinArray(data.gender)}**`
+          `Altura: **${data.height || '???'}**`,
+          `Peso: **${data.weight || '???'}**`,
+          `Gênero: **${text.joinArray(data.gender)}**`
         ].join('\n')
       },
-      { name: 'Egg Groups', value: data.egg_groups.join('\n') || '???', inline: true },
+      { name: 'Grupos de Ovos', value: data.egg_groups.join('\n') || '???', inline: true },
       {
-        name: 'Stats', inline: true,
+        name: 'Estatísticas', inline: true,
         value: [
            `HP: **${data.stats.hp || '???'}**`,
            `ATK: **${data.stats.attack || '???'}**`,
@@ -85,9 +84,9 @@ module.exports = {
           `SPEED: **${data.stats.speed || '???'}**`
         ].join('\n')
       },
-      { name: 'Generation', value: data.generation || '???', inline: true },
-      { name: 'Evolution Stage', value: text.ordinalize(data.family.evolutionStage || '???'), inline: true },
-      { name: 'Evolution Line', value: data.family.evolutionLine.join(' \\👉 ') || '???', inline: true }
+      { name: 'Geração', value: data.generation || '???', inline: true },
+      { name: 'Estágio de Evolução', value: text.ordinalize(data.family.evolutionStage || '???'), inline: true },
+      { name: 'Linha de Evolução', value: data.family.evolutionLine.join(' \\👉 ') || '???', inline: true }
     ]);
 
     return await prompt.edit(embed).catch(() => null) || message.channel.send(embed);

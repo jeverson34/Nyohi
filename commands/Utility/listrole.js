@@ -7,7 +7,7 @@ module.exports = {
   aliases: [ 'roles' ],
   group: 'utility',
   guildOnly: true,
-  description: 'Displays in list all of the roles this server has',
+  description: 'Exibe na lista todas as funções que este servidor possui',
   examples: [
     'listrole',
     'roles'
@@ -15,8 +15,7 @@ module.exports = {
   run: async (client, message) => message.channel.send(
     new MessageEmbed()
     .setColor(Color)
-    .setAuthor(` ${message.guild.name} Roles List`)
-    .setFooter(`Listrole | \©️${new Date().getFullYear()} Nyohi`)
+    .setAuthor(` ${message.guild.name} Lista de funções`)
     .addFields(
       _.chunk(message.guild.roles.cache.array()
         .filter(x => x.id !== message.guild.id)

@@ -5,7 +5,7 @@ module.exports = {
   permissions: [ 'KICK_MEMBERS' ],
   clientPermissions: [ 'KICK_MEMBERS' ],
   group: 'moderation',
-  description: 'Kick mentioned user from this server.',
+  description: 'Expulsar o usuário mencionado deste servidor.',
   parameters: [ 'User Mention | ID', 'Kick Reason'],
   examples: [
     'kick @user breaking server rules',
@@ -15,7 +15,7 @@ module.exports = {
   run: async (client, message, [member = '', ...reason] ) => {
 
     if (!member.match(/\d{17,19}/)){
-      return message.channel.send(`\\❌ | ${message.author}, Please provide the ID or mention the user to kick. [mention first before adding the reason]`);
+      return message.channel.send(`\\❌ | ${message.author}, Forneça o ID ou mencione o usuário para chutar. [mencione primeiro antes de adicionar o motivo]`);
     };
 
     member = await message.guild.members
@@ -23,34 +23,34 @@ module.exports = {
     .catch(() => null);
 
     if (!member){
-      return message.channel.send(`\\❌ | ${message.author}, User could not be found! Please ensure the supplied ID is valid. Mention user for more precision on pinpointing user.`);
+      return message.channel.send(`\\❌ | ${message.author}, Usuário não encontrado! Certifique-se de que o ID fornecido é válido. Mencione o usuário para obter mais precisão na localização do usuário.`);
     };
 
     if (member.id === message.author.id){
-      return message.channel.send(`\\❌ | ${message.author}, You cannot kick yourself!`);
+      return message.channel.send(`\\❌ | ${message.author}, Você não pode se chutar!`);
     };
 
     if (member.id === client.user.id){
-      return message.channel.send(`\\❌ | ${message.author}, Please don't kic me!`);
+      return message.channel.send(`\\❌ | ${message.author}, Por favor, não me chute!`);
     };
 
     if (member.id === message.guild.ownerID){
-      return message.channel.send(`\\❌ | ${message.author}, You cannot kick a server owner!`);
+      return message.channel.send(`\\❌ | ${message.author}, Você não pode expulsar o proprietário de um servidor!`);
     };
 
     if (client.config.owners.includes(member.id)){
-      return message.channel.send(`\\❌ | ${message.author}, No, you can't kick my developers through me!`)
+      return message.channel.send(`\\❌ | ${message.author}, Não, você não pode chutar meus desenvolvedores através de mim!`)
     };
 
     if (message.member.roles.highest.position < member.roles.highest.position){
-      return message.channel.send(`\\❌ | ${message.author}, You can't kick that user! He/She has a higher role than yours`)
+      return message.channel.send(`\\❌ | ${message.author}, Você não pode chutar aquele usuário! Ele / ela tem um papel mais importante do que o seu`)
     };
 
     if (!member.kickable){
-      return message.channel.send(`\\❌ | ${message.author}, I couldn't kick that user!`);
+      return message.channel.send(`\\❌ | ${message.author}, Não consegui chutar aquele usuário!`);
     };
 
-    await message.channel.send(`Are you sure you want to kick **${member.user.tag}**? (y/n)`)
+    await message.channel.send(`Tem certeza que quer expulsar **${member.user.tag}**? (y/n)`)
 
     const filter = _message => message.author.id === _message.author.id && ['y','n','yes','no'].includes(_message.content.toLowerCase());
     const options = { max: 1, time: 30000, errors: ['time'] };
@@ -59,14 +59,14 @@ module.exports = {
     .catch(() => false);
 
     if (!proceed){
-      return message.channel.send(`\\❌ | ${message.author}, cancelled the kick command!`);
+      return message.channel.send(`\\❌ | ${message.author}, cancelou o comando kick`);
     };
 
-    await member.send(`**${message.author.tag}** kicked you from ${message.guild.name}!\n**Reason**: ${reason.join(' ') || 'Unspecified.'}`)
+    await member.send(`**${message.author.tag}** espulsou você de ${message.guild.name}!\n**Razão**: ${reason.join(' ') || 'Não especificado.'}`)
     .catch(() => null);
 
-    return member.kick({ reason: `MAI Kick Command: ${message.author.tag}: ${reason.join(' ') || 'Unspecified'}`})
-    .then(_member => message.channel.send(`\\✔️ Successfully kicked **${_member.user.tag}**`))
-    .catch(() => message.channel.send(`\\❌ Failed to kicked **${member.user.tag}**!`));
+    return member.kick({ reason: `Nyohi Kick Command: ${message.author.tag}: ${reason.join(' ') || 'Não especificado.'}`})
+    .then(_member => message.channel.send(`\\✔️ expulso com sucesso **${_member.user.tag}**`))
+    .catch(() => message.channel.send(`\\❌ Falha ao Expulsar **${member.user.tag}**!`));
   }
 };
